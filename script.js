@@ -195,9 +195,8 @@ class TriviaGame {
 
     decodeHTML(html) {
         const txt = document.createElement('textarea');
-        txt.textContent = html;
-        const decoded = txt.innerHTML;
-        return decoded;
+        txt.innerHTML = html;
+        return txt.value;
     }
     
     showErrorScreen(message) {
