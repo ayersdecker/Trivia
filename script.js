@@ -60,7 +60,7 @@ class TriviaGame {
         this.isAnswering = false;
 
         try {
-            const response = await fetch('https://opentdb.com/api.php?amount=1&type=multiple');
+            const response = await fetch('https://opentdb.com/api.php?amount=1&type=multiple&difficulty=easy');
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
