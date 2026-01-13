@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriviaStreak - Test Your Knowledge!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 TriviaStreak</h1>
+            <p class="tagline">How many can you get in a row?</p>
+        </header>
+
+        <div class="score-board">
+            <div class="score-item">
+                <span class="score-label">Current Streak:</span>
+                <span class="score-value" id="current-streak">0</span>
+            </div>
+            <div class="score-item">
+                <span class="score-label">Best Streak:</span>
+                <span class="score-value" id="best-streak">0</span>
+            </div>
+        </div>
+
+        <div id="game-container">
+            <div id="start-screen" class="screen">
+                <h2>Welcome to TriviaStreak!</h2>
+                <p>Answer trivia questions correctly to build your streak. One wrong answer and you start over!</p>
+                <button id="start-btn" class="btn btn-primary">Start Game</button>
+            </div>
+
+            <div id="question-screen" class="screen hidden">
+                <div class="question-info">
+                    <span class="category" id="category"></span>
+                    <span class="difficulty" id="difficulty"></span>
+                </div>
+                <h2 id="question" class="question-text"></h2>
+                <div id="answers" class="answers-container"></div>
+                <div id="feedback" class="feedback hidden"></div>
+            </div>
+
+            <div id="game-over-screen" class="screen hidden">
+                <h2>Game Over!</h2>
+                <p class="game-over-message">Your streak ended at <span id="final-streak">0</span> correct answers!</p>
+                <div class="game-over-stats">
+                    <p>Best Streak: <span id="best-streak-display">0</span></p>
+                </div>
+                <button id="restart-btn" class="btn btn-primary">Play Again</button>
+            </div>
+
+            <div id="loading-screen" class="screen hidden">
+                <div class="loader"></div>
+                <p>Loading question...</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Questions powered by <a href="https://opentdb.com/" target="_blank">Open Trivia Database</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
