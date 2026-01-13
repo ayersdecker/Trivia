@@ -61,6 +61,11 @@ class TriviaGame {
 
         try {
             const response = await fetch('https://opentdb.com/api.php?amount=1&type=multiple');
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
             const data = await response.json();
 
             if (data.response_code === 0 && data.results.length > 0) {
@@ -71,8 +76,7 @@ class TriviaGame {
             }
         } catch (error) {
             console.error('Error fetching question:', error);
-            alert('Failed to load question. Please check your internet connection and try again.');
-            this.showScreen(this.startScreen);
+            this.showErrorScreen('Failed to load question. Please check your internet connection and try again.');
         }
     }
 
@@ -191,8 +195,32 @@ class TriviaGame {
 
     decodeHTML(html) {
         const txt = document.createElement('textarea');
-        txt.innerHTML = html;
-        return txt.value;
+        txt.textContent = html;
+        const decoded = txt.innerHTML;
+        return decoded;
+    }
+    
+    showErrorScreen(message) {
+        // Create error display in the start screen
+        this.showScreen(this.startScreen);
+        
+        // Show error message temporarily
+        const existingError = document.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+        
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.style.cssText = 'background: #f44336; color: white; padding: 15px; border-radius: 10px; margin-bottom: 20px;';
+        errorDiv.textContent = message;
+        
+        this.startScreen.insertBefore(errorDiv, this.startScreen.firstChild);
+        
+        // Remove error message after 5 seconds
+        setTimeout(() => {
+            errorDiv.remove();
+        }, 5000);
     }
 }
 
