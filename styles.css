@@ -350,25 +350,230 @@ footer a:hover {
     text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
     .container {
-        padding: 20px;
+        padding: 25px;
+        border-radius: 15px;
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .score-board {
+        padding: 15px;
+        margin-bottom: 20px;
     }
 
     .score-value {
         font-size: 2rem;
     }
 
+    .score-label {
+        font-size: 0.85rem;
+    }
+
     .question-text {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .answer-btn {
-        padding: 15px;
+        padding: 16px;
         font-size: 1rem;
+    }
+
+    #start-screen h2 {
+        font-size: 1.7rem;
+    }
+
+    #start-screen p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+
+    #game-over-screen h2 {
+        font-size: 2rem;
+    }
+
+    .game-over-message {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+
+    .container {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    header {
+        margin-bottom: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .score-board {
+        flex-direction: row;
+        padding: 12px;
+        margin-bottom: 15px;
+        gap: 10px;
+    }
+
+    .score-item {
+        flex: 1;
+    }
+
+    .score-label {
+        font-size: 0.75rem;
+    }
+
+    .score-value {
+        font-size: 1.8rem;
+    }
+
+    #game-container {
+        min-height: 300px;
+    }
+
+    .question-info {
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    .category,
+    .difficulty {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .question-text {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .answers-container {
+        gap: 10px;
+    }
+
+    .answer-btn {
+        padding: 14px 12px;
+        font-size: 0.95rem;
+    }
+
+    .answer-btn:hover {
+        transform: translateX(3px);
+    }
+
+    #start-screen h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    #start-screen p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+        width: 100%;
+    }
+
+    #game-over-screen h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .game-over-message {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+
+    .game-over-message span {
+        font-size: 1.3rem;
+    }
+
+    .game-over-stats {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .game-over-stats p {
+        font-size: 1rem;
+    }
+
+    .feedback {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    footer {
+        margin-top: 20px;
+        padding-top: 15px;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+
+    #loading-screen {
+        padding: 40px 15px;
+    }
+
+    .loader {
+        width: 50px;
+        height: 50px;
+        border-width: 4px;
+    }
+
+    #loading-screen p {
+        font-size: 1rem;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    .score-value {
+        font-size: 1.5rem;
+    }
+
+    .question-text {
+        font-size: 1rem;
+    }
+
+    .answer-btn {
+        padding: 12px 10px;
+        font-size: 0.9rem;
     }
 }
