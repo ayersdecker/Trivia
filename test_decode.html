@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decode Test</title>
+</head>
+<body>
+    <h1>Testing HTML Entity Decoding</h1>
+    <div id="output"></div>
+    <script>
+        function decodeHTML(html) {
+            const txt = document.createElement('textarea');
+            txt.innerHTML = html;
+            return txt.value;
+        }
+        
+        const testStrings = [
+            "What does the letter &#039;S&#039; stand for in &#039;NASA&#039;?",
+            "It&#039;s a test",
+            "&amp;#039;",
+            "&#039;"
+        ];
+        
+        const output = document.getElementById('output');
+        testStrings.forEach(str => {
+            const decoded = decodeHTML(str);
+            output.innerHTML += `<p><strong>Input:</strong> ${str}<br><strong>Output:</strong> ${decoded}</p>`;
+        });
+    </script>
+</body>
+</html>
